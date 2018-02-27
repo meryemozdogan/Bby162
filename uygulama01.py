@@ -1,8 +1,6 @@
-metin= """Kuğuların ölüm öncesi ezgileri şiirlerim,
-        Yalpalayan hayatımın kara çarşaflı
-        bekçi gizleri."""
+metin=  input("Metni yazınız... :")
 
-first_half= len(metin)
-print(first_half / 2)
+first_half= metin[: int(len(metin)/ 2)]
 
-print(metin[:53])
+print(first_half)
+
