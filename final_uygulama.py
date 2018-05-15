@@ -7,13 +7,13 @@ class Simon_Game:
     def __init__(self):
         self.__pencere=Tk()
         self.__etiket=self.__pencere.title("Simon Oyunu")
-        self.__pencere.geometry("300x450")  ## istenilen boyutlarda açılmasını sağlıyor.
-        self.__pencere.resizable(False, False)  ## pencereni yenidne boyutlanamsına izin vermiyoruz. bunu silerken default olarak true oluyorlar zaten. 
+        self.__pencere.geometry("300x450")  
+        self.__pencere.resizable(False, False)  ## pencerenin yeniden boyutlanamsına izin vermiyoruz. bunu silerken default olarak true oluyorlar zaten. 
 
         self.__pc_Secimi=[]
         self.__kullanıcı_Secimi=[]
         self.__renkler=["red","blue","yellow","green"]
-        self.__renkMethods = {"red" : self.red, "blue": self.blue, "green" : self.green, "yellow" : self.yellow}  ##bu sözlük yapısıdır. sadece gereksiz kod yazmamak için bunu ekledim. sorun olursa bu kısım kaldırılabilir.
+        self.__renkMethods = {"red" : self.red, "blue": self.blue, "green" : self.green, "yellow" : self.yellow}  ##bu sözlük yapısıdır.
 
         self.__buton1 = Button(self.__pencere, text="Yeşil", height=10, width=20, bg="green", activebackground="green", state=DISABLED, command=self.doldur1)
         self.__buton1.grid(row=1, column=0)
@@ -31,8 +31,7 @@ class Simon_Game:
 
 
         self.__strvar2 = StringVar()
-        ## Cümle girişi. StringVar kısımları label lara atanır textvariable=... kısmı ile. bu değişkenler program içinde değiştirilebilinir. .config ile text değer de değişebiliyor ancak bu yapı daha esnek.
-
+        ## Cümle girişi. StringVar kısımları label lara atanır textvariable=... kısmı ile. 
         
         self.__buton5=Button(self.__pencere,text="Oyuna Başla",command=self.başla)
         self.__buton5.grid(row=3,column=0)
@@ -56,7 +55,7 @@ class Simon_Game:
             self.__pc_Secimi.append(self.__renk)
             self.__renkMethods[self.__renk]()
             ## tekrar tekrar seçimyap ve göster yerine for döngüsü kullanmak çok daha kullanışlıdır. tek satırlık işlemler için ayrı fonksiyon yazmaya gerek yok. yuakrda sözlük yapısı buralarda kulanılıyor.
-            ## seçilen rengin isminden direkt fonksiyona erişmek içi. bu omasa 4 tane if ekleyecektik.
+            ## seçilen rengin isminden direkt fonksiyona erişmek için. bu olmasa 4 tane if ekleyecektik.
 
         self.__buton7.config(state=NORMAL)
         self.__buton8.config(state=DISABLED)
