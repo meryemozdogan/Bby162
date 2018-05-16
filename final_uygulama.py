@@ -8,7 +8,7 @@ class Simon_Game:
         self.__pencere=Tk()
         self.__etiket=self.__pencere.title("Simon Oyunu")
         self.__pencere.geometry("300x450")  ## istenilen boyutlarda açılmasını sağlıyor.
-        self.__pencere.resizable(False, False)  ## pencereni yenidne boyutlanamsına izin vermiyoruz. bunu silerken default olarak true oluyorlar zaten. 
+        self.__pencere.resizable(False, False)  ## pencereni yeniden boyutlanmasına izin vermiyoruz.  
 
         self.__pc_Secimi=[]
         self.__kullanıcı_Secimi=[]
@@ -31,7 +31,7 @@ class Simon_Game:
 
 
         self.__strvar2 = StringVar()
-        ## Cümle girişi. StringVar kısımları label lara atanır textvariable=... kısmı ile. bu değişkenler program içinde değiştirilebilinir. .config ile text değer de değişebiliyor ancak bu yapı daha esnek.
+        ## Cümle girişi. StringVar kısımları label lara atanır textvariable=... kısmı ile. .config ile text değer de değişebiliyor ancak bu yapı daha esnek.
 
         
         self.__buton5=Button(self.__pencere,text="Oyuna Başla",command=self.başla)
@@ -147,7 +147,7 @@ class Simon_Game:
         
     def yeniden_basla_kontrol(self):
         ## oyuna başlayınca oyuna basla butonu oyunu bitir e dönüşüyor. ve bu fonksyona bağlıyor.
-        answer = messagebox.askyesno("Emin misiniz?","Oyun Hala Devam Ediyor. Yeniden başlamak istediğinize emin misiniz?")  ## ekerana uyarı vermesini sağlayan yapı. evet e basarsak True döndürür.
+        answer = messagebox.askyesno("Emin misiniz?","Oyun Hala Devam Ediyor. Yeniden başlamak istediğinize emin misiniz?")  ## ekrana uyarı vermesini sağlayan yapı. evet e basarsak True döndürür.
         if answer:                                                                                                           ## hayır a basarsak False Döndürür.  yani return eder. buna göre de o an oyunu bitirip ilk haline 
             self.__pc_Secimi.clear()                                                                                         ## dönüştürebiliriz.
             self.__kullanıcı_Secimi.clear()
